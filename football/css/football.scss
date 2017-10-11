@@ -1,0 +1,189 @@
+
+%hfStyle{
+    width: 100%;
+    height: 2rem;    
+}
+%ulStyle{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 437708 */
+  src: url('//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.eot');
+  src: url('//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.woff') format('woff'),
+  url('//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:16px;font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+    }
+    header{
+        @extend %hfStyle;
+        background-color: #0dc441;
+        ul{
+            @extend %ulStyle;
+            height: 100%;
+            li{
+                height:100%;
+                &:nth-child(1){
+                    flex: 1;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 28px;
+                    color: rgba(255,255,255,0.5);
+                }
+                &:nth-child(2){
+                    flex: 5;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    span{
+                        font-size: 12px;
+                        width: 59px;
+                        height: 25px;
+                        display: block;
+                        color: white;
+                        text-align: center;
+                        line-height: 25px;
+                        &:nth-of-type(1){
+                            border-radius: 10px 0 0 10px;
+                            background-color: rgba(10,217,133,1);
+                        
+                        }
+                        &:nth-of-type(2){
+                            border-radius: 0 10px 10px 0;
+                            background-color: rgba(10,217,133,0.5);
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    flex: 1;
+                    line-height: 50px;
+                    text-align: center;
+                    font-size: 28px;
+                    color: rgba(255,255,255,0.5);
+                }
+            }
+        }
+    }
+    footer{
+        @extend %hfStyle;
+        background: #fff;
+        ul{
+            @extend %ulStyle;
+            height: 100%;
+            border-top: solid 1px #ced6cf;
+            li{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                flex: 1;
+                &:nth-of-type(3){
+                    text-align: center;
+                    span{
+                        display: block;
+                        width: 48px;
+                        height: 48px;
+                        border: solid 1px #999;
+                        line-height: 50px;
+                        border-radius: 50%;
+                        font-size: 34px;                       
+                    }
+                    
+                }
+                &:nth-of-type(1){
+                    span{
+                        color: #0dc441!important;
+                    }
+                    
+                }
+                span{
+                    flex: 1;
+                    font-size: 16px;
+                    line-height: 25px;
+                    color: #ced6cf;
+                    &:nth-of-type(odd){
+                        font-size: 24px;
+                        
+                    } 
+                }
+            }
+        }
+    }
+     nav{
+        width: 100%;
+        height: 1.4rem;
+        margin-bottom: 4px;
+        ul{
+            @extend %ulStyle;                
+            align-items: center;
+            height: 100%;
+            li{
+                height: 100%;
+                flex: 1;
+                text-align: center;
+                font-size: 16px;
+                border-bottom: solid 1px #999;
+                line-height: 1.4rem;
+                &:nth-child(1){
+                    color: #0dc441;
+                    border-bottom: solid 1px #0dc441;
+                }
+            }
+        }
+        }
+    section{
+        @extend html;
+        display: flex;
+        flex-direction: column;
+       
+        ul{
+            @extend %ulStyle;
+            flex-wrap: wrap;           
+            overflow-y: auto;
+            align-content: flex-start;
+            li{
+                width:48%;
+                display: flex;
+                flex-direction: column;
+                
+                padding: 0 4px;
+                &:nth-of-type(odd){
+                    padding-right: 2px;
+                }
+                &:nth-of-type(even){
+                    padding-left: 0;
+                }
+                img{
+                   width: 100%;
+                }
+                p{
+                    font-size: 16px;
+                    font-weight: bold;
+                    white-space: pre-line;
+                    margin: 0;
+                }
+            }
+        }
+    }
+}

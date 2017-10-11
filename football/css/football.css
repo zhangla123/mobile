@@ -1,0 +1,41 @@
+html header, html footer { width: 100%; height: 2rem; }
+
+html header ul, html footer ul, html nav ul, html section ul { list-style: none; padding: 0; margin: 0; display: flex; }
+
+@font-face { font-family: 'iconfont';
+  /* project id 437708 */
+src: url("//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.eot"); src: url("//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.woff") format("woff"), url("//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.ttf") format("truetype"), url("//at.alicdn.com/t/font_437708_i9ew9h0j65mf5hfr.svg#iconfont") format("svg"); }
+.iconfont { font-family: "iconfont" !important; font-size: 16px; font-style: normal; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; }
+
+html, html body, html section { width: 100%; height: 100%; }
+html body { margin: 0; padding: 0; display: flex; flex-direction: column; }
+html header { background-color: #0dc441; }
+html header ul { height: 100%; }
+html header ul li { height: 100%; }
+html header ul li:nth-child(1) { flex: 1; line-height: 50px; text-align: center; font-size: 28px; color: rgba(255, 255, 255, 0.5); }
+html header ul li:nth-child(2) { flex: 5; display: flex; align-items: center; justify-content: center; }
+html header ul li:nth-child(2) span { font-size: 12px; width: 59px; height: 25px; display: block; color: white; text-align: center; line-height: 25px; }
+html header ul li:nth-child(2) span:nth-of-type(1) { border-radius: 10px 0 0 10px; background-color: #0ad985; }
+html header ul li:nth-child(2) span:nth-of-type(2) { border-radius: 0 10px 10px 0; background-color: rgba(10, 217, 133, 0.5); }
+html header ul li:nth-child(3) { flex: 1; line-height: 50px; text-align: center; font-size: 28px; color: rgba(255, 255, 255, 0.5); }
+html footer { background: #fff; }
+html footer ul { height: 100%; border-top: solid 1px #ced6cf; }
+html footer ul li { height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; flex: 1; }
+html footer ul li:nth-of-type(3) { text-align: center; }
+html footer ul li:nth-of-type(3) span { display: block; width: 48px; height: 48px; border: solid 1px #999; line-height: 50px; border-radius: 50%; font-size: 34px; }
+html footer ul li:nth-of-type(1) span { color: #0dc441 !important; }
+html footer ul li span { flex: 1; font-size: 16px; line-height: 25px; color: #ced6cf; }
+html footer ul li span:nth-of-type(odd) { font-size: 24px; }
+html nav { width: 100%; height: 1.4rem; margin-bottom: 4px; }
+html nav ul { align-items: center; height: 100%; }
+html nav ul li { height: 100%; flex: 1; text-align: center; font-size: 16px; border-bottom: solid 1px #999; line-height: 1.4rem; }
+html nav ul li:nth-child(1) { color: #0dc441; border-bottom: solid 1px #0dc441; }
+html section { display: flex; flex-direction: column; }
+html section ul { flex-wrap: wrap; overflow-y: auto; align-content: flex-start; }
+html section ul li { width: 48%; display: flex; flex-direction: column; padding: 0 4px; }
+html section ul li:nth-of-type(odd) { padding-right: 2px; }
+html section ul li:nth-of-type(even) { padding-left: 0; }
+html section ul li img { width: 100%; }
+html section ul li p { font-size: 16px; font-weight: bold; white-space: pre-line; margin: 0; }
+
+/*# sourceMappingURL=football.css.map */
