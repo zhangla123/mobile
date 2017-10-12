@@ -63,6 +63,7 @@
 			var w=lis[0].offsetWidth;
 			console.log(w);
 			box.addEventListener('touchstart',function(ev){
+				ev.preventDefault();
 				var positi=ev.changedTouches[0].clientX;
 				var left=box.offsetLeft;
 				console.log(positi);
