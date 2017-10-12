@@ -16,11 +16,15 @@
 		</style>
 	</head>
 	<body>
+		<input type="number" />
 		<div id='box'></div>
 		<a href="www.baidu.com">baidu</a>
 		<script>
 			var box=document.querySelector('#box');
 			box.addEventListener('touchstart',function(ev){
+				//touches当前屏幕上所有触摸点的列表
+				//targetTouches当前对象上所有触摸点的列表
+				//changedTouches当前事件上所有触摸点的列表
 				ev.preventDefault();
 				this.innerHTML=ev.changedTouches.length;
 			})
