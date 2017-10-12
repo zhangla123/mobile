@@ -57,15 +57,18 @@
 		<script>
 			var box=document.querySelector('#box');
 			var hins=new Hammer(box);
+			hins.get('pinch').set({ enable: true });
+			var sc=1;
 			var i=0;
 			var flag=true;
 			hins.on('panleft',function(){
 				if(flag){
 					if(i<3){
-						i++;						
+						i++;
+						
 					}else{
 						i=3;
-					}
+					}		
 					box.style.webkitTransform='translate3d(-'+i*25+'%,0,0)';
 					console.log(i);
 					flag=false;
@@ -84,9 +87,17 @@
 				}
 			})
 			hins.on('pinchout',function(){
-				if(flag){
-					box.style.webkitTransform='scale(1.1)';
+				sc+=0.03;
+				if(sc>3){
+					sc=3
 				}
+				box.style.webkitTransform='scale('+sc+')';
+				
+			})
+			hins.on('pinchin',function(){
+				sc-=0.03;
+				if(sc<0.1)sc=0.1;
+				box.style.webkitTransform='scale('+sc+')';
 			})
 			box.addEventListener('touchend',function(){
 				flag=true;
