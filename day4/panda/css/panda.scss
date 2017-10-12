@@ -1,0 +1,134 @@
+$sc:23.9375;
+@font-face {
+  font-family: 'iconfont';  /* project id 437708 */
+  src: url('//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.eot');
+  src: url('//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.woff') format('woff'),
+  url('//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.svg#iconfont') format('svg');
+}
+.iconfont{
+  font-family:"iconfont" !important;
+  font-size:40px;font-style:normal;
+  color: #5e84b4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        margin: 0;
+        padding: 0;
+        overflow-y:auto ;
+      
+        header{
+            font-size: 0;
+//          position: fixed;
+//          top: 0;
+            img{
+                width: 415/$sc+rem;
+                height: 187/$sc+rem;
+                z-index: 999;
+            }
+           
+        }
+        nav{
+             height: 129/$sc+rem;
+             
+//           margin-top: 187/$sc+rem;
+            img{
+                width: 85/$sc+rem;
+                height: 20/$sc+rem;
+                margin-top: 13/$sc+rem;
+                margin-left: 166/$sc+rem;
+            }
+             p{
+                font-size: 14/$sc+rem;
+                padding:0 1rem;
+                margin: 0;
+                line-height: 15/$sc+rem;
+                margin-top: 8/$sc+rem;
+                
+                span{
+                    display: inline-block;
+                    width: 40/$sc+rem;
+                    height: 40/$sc+rem;
+                    border-radius: 50%;
+                    background-color: #d32c57;
+                    text-align: center;
+                    line-height: 40/$sc+rem;
+                }
+            }
+        }
+        section{  
+            width: 100%;
+            height: 100%;         
+            ul{
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                li{
+                    display: flex;
+                    height: 150/$sc+rem;
+                    box-sizing: border-box;
+                    border-bottom: solid 1px #999;
+                    padding:14/$sc+rem;
+                    img{
+                        margin-right: 14/$sc+rem;
+                    }
+                    .info{
+                        p{
+                            font-size: 16/$sc+rem;
+                            margin: 0;
+                            line-height: 20/$sc+rem;
+                            
+                            &:nth-of-type(2){
+                                line-height: 30/$sc+rem;
+                                span{
+                                    &:nth-of-type(1){
+                                        font-size: 24/$sc+rem;
+                                        color: #D32C57;
+                                        margin-right: 14/$sc+rem;
+                                    }
+                                    &:nth-of-type(2){
+                                        color:#999;
+                                        text-decoration: line-through;
+                                    }
+                                }
+                            }
+                            &:nth-of-type(3){
+                                position:relative;
+                               
+                                span{
+                                    display: inline-block;
+                                    width: 99/$sc+rem;
+                                    height: 34/$sc+rem;
+                                    line-height: 34/$sc+rem;
+                                    text-align: center;
+                                    color: white;
+                                    font-size: 16/$sc+rem;
+                                    border-radius:16/$sc+rem;
+                                    &:nth-of-type(1){
+                                       background-color: #10c3ab;
+                                    }
+                                    &:nth-of-type(2){
+                                       background-color: #D32C57;
+                                    }
+                                }
+                                i{
+                                    position: absolute;
+                                    top: 30/$sc+rem;
+                                    left: 160/$sc+rem;
+                                }
+                            }
+                        }
+                        
+                    }
+                }
+            }
+        }
+    }
+}

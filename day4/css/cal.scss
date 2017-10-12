@@ -1,0 +1,27 @@
+$sc:50;
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        background: rgb(240,240,240);
+        margin: 0;
+        padding: 0;
+        
+        .box{
+            width: 305/$sc+rem;
+            height: 305/$sc+rem;
+            margin-top: 336/$sc+rem;
+            margin-left: 212/$sc+rem;
+            display: block;
+        }
+        .cal{
+            width: 305/$sc+rem;
+            height: 42/$sc+rem;
+            margin-top: 22/$sc+rem;
+            margin-left: 213/$sc+rem;
+            display: block;
+        }
+        
+    }
+}

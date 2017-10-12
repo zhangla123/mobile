@@ -1,0 +1,28 @@
+@font-face { font-family: 'iconfont';
+  /* project id 437708 */
+src: url("//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.eot"); src: url("//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.eot?#iefix") format("embedded-opentype"), url("//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.woff") format("woff"), url("//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.ttf") format("truetype"), url("//at.alicdn.com/t/font_437708_0asu3zljp9v5z5mi.svg#iconfont") format("svg"); }
+.iconfont { font-family: "iconfont" !important; font-size: 40px; font-style: normal; color: #5e84b4; -webkit-font-smoothing: antialiased; -webkit-text-stroke-width: 0.2px; -moz-osx-font-smoothing: grayscale; }
+
+html, html body { width: 100%; height: 100%; }
+html body { margin: 0; padding: 0; overflow-y: auto; }
+html body header { font-size: 0; }
+html body header img { width: 17.3368146214rem; height: 7.8120104439rem; z-index: 999; }
+html body nav { height: 5.3890339426rem; }
+html body nav img { width: 3.5509138381rem; height: 0.8355091384rem; margin-top: 0.5430809399rem; margin-left: 6.9347258486rem; }
+html body nav p { font-size: 0.5848563969rem; padding: 0 1rem; margin: 0; line-height: 0.6266318538rem; margin-top: 0.3342036554rem; }
+html body nav p span { display: inline-block; width: 1.6710182768rem; height: 1.6710182768rem; border-radius: 50%; background-color: #d32c57; text-align: center; line-height: 1.6710182768rem; }
+html body section { width: 100%; height: 100%; }
+html body section ul { margin: 0; padding: 0; list-style: none; }
+html body section ul li { display: flex; height: 6.2663185379rem; box-sizing: border-box; border-bottom: solid 1px #999; padding: 0.5848563969rem; }
+html body section ul li img { margin-right: 0.5848563969rem; }
+html body section ul li .info p { font-size: 0.6684073107rem; margin: 0; line-height: 0.8355091384rem; }
+html body section ul li .info p:nth-of-type(2) { line-height: 1.2532637076rem; }
+html body section ul li .info p:nth-of-type(2) span:nth-of-type(1) { font-size: 1.0026109661rem; color: #D32C57; margin-right: 0.5848563969rem; }
+html body section ul li .info p:nth-of-type(2) span:nth-of-type(2) { color: #999; text-decoration: line-through; }
+html body section ul li .info p:nth-of-type(3) { position: relative; }
+html body section ul li .info p:nth-of-type(3) span { display: inline-block; width: 4.135770235rem; height: 1.4203655352rem; line-height: 1.4203655352rem; text-align: center; color: white; font-size: 0.6684073107rem; border-radius: 0.6684073107rem; }
+html body section ul li .info p:nth-of-type(3) span:nth-of-type(1) { background-color: #10c3ab; }
+html body section ul li .info p:nth-of-type(3) span:nth-of-type(2) { background-color: #D32C57; }
+html body section ul li .info p:nth-of-type(3) i { position: absolute; top: 1.2532637076rem; left: 6.684073107rem; }
+
+/*# sourceMappingURL=panda.css.map */
