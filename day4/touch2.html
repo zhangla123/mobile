@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<style>
+			html,body{
+				margin: 0;
+				padding: 0;
+				width: 100%;
+				height: 100%;
+			}
+			body{
+				overflow: hidden;
+			}
+			.box{
+				width: 400%;
+				height: 100%;
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				transition: all 0.5s;
+			}
+			.box li{
+				width: 25%;
+				height: 100%;
+				float: left;
+				text-align: center;
+				line-height: 100px;
+			}
+			.box li:nth-child(1){
+				background: red;
+			}
+			.box li:nth-child(2){
+				background: pink;
+			}
+			.box li:nth-child(3){
+				background: greenyellow;
+			}
+			.box li:nth-child(4){
+				background: green;
+			}
+		</style>
+		<script src="js/hammer.js"></script>
+		<script>
+			document.documentElement.style.fontSize=innerWidth/15+'px';
+		</script>
+	</head>
+	<body>
+		<ul class="box" id="box">
+			<li>abc1</li>
+			<li>abc2</li>
+			<li>abc3</li>
+			<li>abc4</li>
+		</ul>
+		<script>
+			var box=document.querySelector('#box');
+			var hins=new Hammer(box);
+			var i=0;
+			var flag=true;
+			hins.on('panleft',function(){
+				if(flag){
+					i++;
+					box.style.webkitTransform='translate3d(-'+i*25+'%,0,0)';
+					console.log(i);
+					flag=false;
+				}
+				
+			})
+			hins.on('panright',function(){
+				if(flag){
+					i--;
+					box.style.webkitTransform='translate3d(-'+i*25+'%,0,0)';
+					flag=false;
+				}
+			})
+			hins.on('pinchout',function(){
+				if(flag){
+					box.style.webkitTransform='scale('+1.1+')';
+				}
+			})
+			box.addEventListener('touchend',function(){
+				flag=true;
+			})
+			
+		</script>
+	</body>
+</html>
