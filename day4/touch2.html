@@ -61,23 +61,31 @@
 			var flag=true;
 			hins.on('panleft',function(){
 				if(flag){
-					i++;
+					if(i<3){
+						i++;						
+					}else{
+						i=3;
+					}
 					box.style.webkitTransform='translate3d(-'+i*25+'%,0,0)';
 					console.log(i);
 					flag=false;
-				}
-				
+				}	
 			})
 			hins.on('panright',function(){
 				if(flag){
-					i--;
+					if(i>0){
+						i--;
+					}else{
+						i=0;
+					}
+					
 					box.style.webkitTransform='translate3d(-'+i*25+'%,0,0)';
 					flag=false;
 				}
 			})
 			hins.on('pinchout',function(){
 				if(flag){
-					box.style.webkitTransform='scale('+1.1+')';
+					box.style.webkitTransform='scale(1.1)';
 				}
 			})
 			box.addEventListener('touchend',function(){
