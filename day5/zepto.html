@@ -43,6 +43,9 @@
 		<script>
 			
 			$(function(){
+				document.addEventListener('touchstart',function(ev){
+					ev.preventDefault();
+				})
 				var n=0;
 				$('.box').on('swipeLeft',function(){
 					n++;
