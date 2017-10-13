@@ -1,0 +1,34 @@
+$sc:50;
+%ulStyle{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        header{
+            background-color: #148ad2;
+            height: 128/$sc+rem;            
+            color: #fff;
+            box-sizing: border-box;
+            padding-top: 40/$sc+rem;
+            span{
+                line-height: 88/$sc+rem;
+                font-size: 60/$sc+rem;
+                font-weight: 100;
+                &:nth-of-type(2){
+                    font-size: 48/$sc+rem;
+                    margin-left:200/$sc+rem;
+                    
+                }
+            }           
+        }
+    }
+}
