@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>vue</title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id='app'>
+			<h1 @click='dj'>{{info}}</h1>
+			<div>
+				<p>{{a}}</p>
+				<p>{{b}}</p>
+			</div>
+		</div>
+		<script>
+			var app=new Vue({
+				el:'#app',
+				data:{
+					info:'Hello world!',
+					a:123,
+					b:256
+				},
+				methods:{
+					dj(){
+						this.info='Hello 123',
+						[this.a,this.b]=[this.b,this.a]
+					}
+				}
+			})
+		</script>
+		<div id="app2">
+			<span v-bind:title="message">
+				鼠标悬停几秒钟查看此处动态绑定的提示信息！
+			</span>
+		</div>
+		<script>
+			var app2=new Vue({
+				el:'#app2',
+				data:{
+					message:'页面加载于'+new Date().toLocaleDateString()
+				}
+			})
+		</script>
+	</body>
+</html>
