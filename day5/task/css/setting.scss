@@ -1,0 +1,224 @@
+$sc:50;
+%ulStyle{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+}
+%liStyle{
+    width: 100%;
+    height: 106/$sc+rem;
+    line-height: 106/$sc+rem;
+    font-size: 30/$sc+rem;
+    border-bottom: solid 1px #eee;
+    box-sizing: border-box;
+    display: flex;
+    
+    padding-right: 16/$sc+rem;
+    padding-left: 72/$sc+rem;
+    color: #666;
+    span{
+        &:nth-of-type(1){
+            font-size:32/$sc+rem;
+        }
+    }
+}
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        header{
+            background-color: #148ad2;
+            height: 128/$sc+rem;            
+            color: #fff;
+            box-sizing: border-box;
+            padding-top: 40/$sc+rem;
+            span{
+                line-height: 88/$sc+rem;
+                font-size: 60/$sc+rem;
+                font-weight: 100;
+                &:nth-of-type(1){
+                    margin-left: 24/$sc+rem;
+                }
+                &:nth-of-type(2){
+                    font-size: 48/$sc+rem;
+                    margin-left:240/$sc+rem;
+                    
+                }
+            }           
+        }
+        nav{
+            margin-top: 20/$sc+rem;
+            ul{
+                @extend %ulStyle;
+                li{
+                    @extend %liStyle;
+                    
+                    span{
+                        &:nth-of-type(1){
+                            flex: 7;
+                        }
+                        &:nth-of-type(2){
+                            flex: 1;
+                            margin-top: 32/$sc+rem;
+                            height: 38/$sc+rem;
+                            border-radius: 16/$sc+rem;
+                            background-color: #007AFF;
+                            text-align:right;
+                            position: relative                           
+                        }
+                       
+                    }
+                    .btn{
+                        &:before{
+                                content: '';
+                                position: absolute;
+                                width: 36/$sc+rem;
+                                height: 36/$sc+rem;
+                                background-color: #fff;
+                                border: solid 1px #999;
+                                border-radius: 50%;
+                                top: 0;
+                                right: 0;
+                            }
+                    }
+                }
+            }
+        }
+        section{
+            margin-top: 16/$sc+rem;
+            ul{
+                @extend %ulStyle;
+                &:nth-of-type(2){
+                    margin-top: 20/$sc+rem;
+                    li{
+                        &:nth-of-type(1){
+                            span{
+                                &:nth-of-type(2){
+                                     margin-left: 375/$sc+rem;
+                                }
+                            }
+                        }
+                        &:nth-of-type(2){
+                            span{
+                                &:nth-of-type(2){
+                                     margin-left: 405/$sc+rem;
+                                     font-size: 48/$sc+rem;
+                                }
+                            }
+                        }
+                    }
+                }
+                li{
+                    @extend %liStyle;
+                    &:nth-of-type(1){
+                        input[type=range]{
+                            -webkit-appearance: none;
+                            width: 350/$sc+rem;
+                            height: 15/$sc+rem;
+                            border-radius: 10/$sc+rem;
+                            margin-left: 100/$sc+rem;
+                            margin-top: 43/$sc+rem;
+                            outline: none;
+                            background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;
+                            background-size: 0% 100%;
+                            position: relative;
+                            &:before{
+                                content: '0';
+                                position: absolute;
+                                top: 24/$sc+rem;
+                                left: 0;
+                                color: #007AFF;
+                                font-size: 32/$sc+rem;
+                            }
+                            &:after{
+                                content: '100%';
+                                position: absolute;
+                                top: 24/$sc+rem;
+                                right: 0;
+                                color: #007AFF;
+                                font-size: 32/$sc+rem;
+                            }
+                        }
+                        input::-webkit-slider-thumb{
+                            -webkit-appearance: none;
+                            height: 25px;
+                            width: 25px;
+                            margin-top: -10px; /*使滑块超出轨道部分的偏移量相等*/
+                            background: #ffffff; 
+                            border-radius: 50%; /*外观设置为圆形*/
+                            border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+                            box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+                        }
+                        input::-webkit-slider-runnable-track{
+                            height: 15/$sc+rem;
+                            border-radius: 10/$sc+rem;
+                            box-shadow: 0 1/$sc+rem 1/$sc+rem #def3f8,inset 0 2/$sc+rem 2/$sc+rem #0d1112; 
+                        }
+                    }
+                    &:nth-last-of-type(2){
+                        input[type=range]{
+                            -webkit-appearance: none;
+                            width: 250/$sc+rem;
+                            height: 15/$sc+rem;
+                            border-radius: 10/$sc+rem;
+                            margin-left: 100/$sc+rem;
+                            margin-top: 43/$sc+rem;
+                            outline: none;
+                            background: -webkit-linear-gradient(#059CFA, #059CFA) no-repeat;
+                            background-size: 0% 100%;
+                            position: relative;
+                            &:before{
+                                content: '自动';
+                                width: 88/$sc+rem;
+                                height: 44/$sc+rem;
+                                border-radius: 24/$sc+rem;
+                                position: absolute;
+                                top:-14/$sc+rem;
+                                right: -100/$sc+rem;
+                                color: #fff;
+                                font-size: 32/$sc+rem;
+                                background-color: #007AFF;
+                                text-align: center;
+                                line-height: 44/$sc+rem;
+                                font-size: 28/$sc+rem;
+                            }
+                        }
+                        input::-webkit-slider-thumb{
+                            -webkit-appearance: none;
+                            height: 25px;
+                            width: 25px;
+                            margin-top: -10px; /*使滑块超出轨道部分的偏移量相等*/
+                            background: #ffffff; 
+                            border-radius: 50%; /*外观设置为圆形*/
+                            border: solid 0.125em rgba(205, 224, 230, 0.5); /*设置边框*/
+                            box-shadow: 0 .125em .125em #3b4547; /*添加底部阴影*/
+                        }
+                        input::-webkit-slider-runnable-track{
+                            height: 15/$sc+rem;
+                            border-radius: 10/$sc+rem;
+                            box-shadow: 0 1/$sc+rem 1/$sc+rem #def3f8,inset 0 2/$sc+rem 2/$sc+rem #0d1112; 
+                        }
+                    }
+                }
+            }
+        }
+        footer{
+            margin-top: 114/$sc+rem;
+            width: 500/$sc+rem;
+            height: 82/$sc+rem;
+            margin-left: 123/$sc+rem;
+            background-color: #007AFF;
+            color: white;
+            border-radius: 16/$sc+rem;
+            line-height: 82/$sc+rem;
+            text-align: center;
+            font-size: 32/$sc+rem;
+        }
+    }
+}

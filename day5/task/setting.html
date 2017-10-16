@@ -2,8 +2,67 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title>设置</title>
+		<script>
+			document.documentElement.style.fontSize=innerWidth/15+'px';			
+		</script>
+		<script src="js/jquery-3.2.1.min.js"></script>
+		<script src="js/range.js"></script>
+		<link rel="stylesheet" href="css/setting.css" />
 	</head>
 	<body>
+		<header>
+			<span>&lt;</span>
+			<span>设置</span>
+		</header>
+		<nav>
+			<ul>
+				<li>
+					<span>仅WiFi下载图片</span>
+					<span class="btn"></span>
+				</li>
+				<li>
+					<span>仅WiFi自动播放视频</span>
+					<span class="btn"></span>
+				</li>
+			</ul>
+		</nav>
+		<section>
+			<ul>
+				<li>
+					<span>正文字号</span>
+					<input type="range" max="100" min="0"/>
+				</li>
+				<li>
+					<span>屏幕亮度</span>
+					<input type="range" max="100" min="0"/>
+				</li>
+				<li>
+					<span>清除缓存</span>
+				</li>
+			</ul>
+			<ul>
+				<li>
+					<span>版本更新</span>
+					<span>1.0.0</span>
+				</li>
+				<li>
+					<span>
+						关于我们
+					</span>
+					<span>&gt;</span>
+				</li>
+			</ul>
+		</section>
+		<footer>退出登录</footer>
+		 <script>
+            var change = function($input) {
+                /*内容可自行定义*/
+                console.log("123");
+            }
+            $('input').eq(0).RangeSlider({ min: 0,   max: 100,  step: 0.1,  callback: change});
+            $('input').eq(1).RangeSlider({ min: 0,   max: 100,  step: 0.1,  callback: change});
+        </script>
 	</body>
 </html>

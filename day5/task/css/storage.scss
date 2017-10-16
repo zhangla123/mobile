@@ -1,0 +1,204 @@
+$sc:50;
+%ulStyle{
+    width: 100%;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+%liStyle{
+    width: 100%;
+    height: 228/$sc+rem;
+    line-height: 106/$sc+rem;
+    font-size: 30/$sc+rem;
+    border-bottom: solid 1px #999;
+    box-sizing: border-box;
+    display: flex;    
+    padding-right: 16/$sc+rem;
+    padding-left: 30/$sc+rem;
+    padding-top: 20/$sc+rem;
+    color: #666;
+    
+}
+@font-face {
+  font-family: 'iconfont';  /* project id 437708 */
+  src: url('//at.alicdn.com/t/font_437708_2umrbvw75yduz0k9.eot');
+  src: url('//at.alicdn.com/t/font_437708_2umrbvw75yduz0k9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_437708_2umrbvw75yduz0k9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_437708_2umrbvw75yduz0k9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_437708_2umrbvw75yduz0k9.svg#iconfont') format('svg');
+}
+.iconfont{
+    font-family:"iconfont" !important;
+    font-size:14px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;
+    }
+html{
+    width: 100%;
+    height: 100%;
+    body{
+        @extend html;
+        margin: 0;
+        padding: 0;
+        
+        header{
+            background-color: #148ad2;
+            height: 128/$sc+rem;            
+            color: #fff;
+            box-sizing: border-box;
+            padding-top: 40/$sc+rem;
+            padding-left: 24/$sc+rem;
+            span{
+                line-height: 88/$sc+rem;
+                font-size: 60/$sc+rem;
+                font-weight: 100;
+                
+                &:nth-of-type(2){
+                    font-size: 48/$sc+rem;
+                    margin-left:200/$sc+rem;
+                    
+                }
+                &:nth-of-type(3){
+                    font-size:32/$sc+rem;
+                    margin-left: 150/$sc+rem;
+                }
+            }           
+        }
+        nav{
+            height: 75/$sc+rem;
+            display: flex;
+            span{
+                flex: 1;
+                line-height: 75/$sc+rem;
+                text-align: center;
+                font-size: 32/$sc+rem;
+                &:nth-of-type(1){
+                    color: #007AFF;
+                }
+            }
+        }
+        section{
+            ul{
+                @extend %ulStyle;
+                li{
+                    @extend %liStyle;
+                    border-top: solid 1px #999;
+                    img{                              
+                        width: 227/$sc+rem;
+                        height: 182/$sc+rem;
+                    }
+                    div{
+                        margin-left: 20/$sc+rem;
+                        h3{
+                            line-height: 52/$sc+rem;
+                            height: 120/$sc+rem;
+                            margin: 0;
+                            font-size: 32/$sc+rem;
+                        }
+                        p{
+                            margin: 0;
+                            height: 80/$sc+rem;
+                            line-height:30/$sc+rem;
+                            font-size: 14/$sc+rem;
+                            display: flex;
+                            span{
+                                &:nth-of-type(1){
+                                    flex: 3;
+                                }
+                                &:nth-of-type(2){
+                                    flex: 1;
+                                }
+                                &:nth-of-type(3){
+                                    flex: 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(1){
+                    li{
+                        &:nth-of-type(2){
+                            height: 300/$sc+rem;
+                            border-top: none;
+                            display: flex;
+                            flex-direction: column;
+                            h3{
+                                margin: 0;
+                                line-height: 30/$sc+rem;
+                            }
+                            div{
+                                margin-top: 12/$sc+rem;
+                                margin-left: 0;
+                                height: 185/$sc+rem;
+                               
+                            }
+                            p{
+                                margin: 0;
+                                height: 55/$sc+rem;
+                                line-height: 55/$sc+rem;
+                                display: flex;
+                                span{
+                                    &:nth-of-type(1){
+                                        flex: 2;
+                                    }
+                                    &:nth-of-type(2){
+                                        flex: 4;
+                                    }
+                                    &:nth-of-type(3){
+                                        flex: 2;
+                                    }
+                                    &:nth-of-type(4){
+                                        flex: 1;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-of-type(2){
+                    li{
+                        border-top: none; 
+                        &:nth-of-type(3){
+                            height: 300/$sc+rem;
+                            border-top: none;
+                            display: flex;
+                            flex-direction: column;
+                            h3{
+                                margin: 0;
+                                line-height: 30/$sc+rem;
+                            }
+                            div{
+                                margin-top: 12/$sc+rem;
+                                margin-left: 0;
+                                height: 185/$sc+rem;
+                               
+                            }
+                            p{
+                                margin: 0;
+                                height: 55/$sc+rem;
+                                line-height: 55/$sc+rem;
+                                display: flex;
+                                span{
+                                    &:nth-of-type(1){
+                                        flex: 2;
+                                    }
+                                    &:nth-of-type(2){
+                                        flex: 4;
+                                    }
+                                    &:nth-of-type(3){
+                                        flex: 2;
+                                    }
+                                    &:nth-of-type(4){
+                                        flex: 1;
+                                    }
+                                }
+                            }
+                        }                         
+                    }
+                }
+            }
+        }
+    }
+}
