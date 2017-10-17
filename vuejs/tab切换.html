@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style>
+			.col{
+				background: red;
+			}
+			.app ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.app ul li{
+				float: left;
+				width: 80px;
+				text-align: center;
+				cursor: pointer;
+				
+			}
+			.app div{
+				clear: both;
+				width: 400px;
+				height: 200px;
+				border: solid 1px #999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app" class="app">
+			<ul>
+				<li v-for="(v,k) in list" v-bind:class="{'col':k==index}" v-on:click="change(k)">{{v}}</li>
+			</ul>
+			<div v-for="(v,k) in contents" v-show="k==index">{{v}}</div>
+		</div>
+		<script>
+			var app=new Vue({
+				el:'#app',
+				data:{
+					list:['aa','bb','cc','dd','ee'],
+					index:0,
+					contents:['111','222','333','444','555']
+				},
+				methods:{
+					change:function(k){
+						this.index=k;						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

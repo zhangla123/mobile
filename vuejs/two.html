@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model.number="a" /></br>
+			<input type="text" v-model.number="b"/></br>
+			<button v-on:click="plus">加</button>
+			<button v-on:click="reduce">减</button>
+			<button v-on:click="cheng">乘</button>
+			<button v-on:click="chu">除</button>
+			<span>{{results}}</span>
+		</div>
+		<script>
+			var app=new Vue({
+				el:'#app',
+				data:{
+					a:'',
+					b:'',
+					results:''
+				},
+				methods:{
+					plus:function(){
+						return this.results=this.a+this.b;
+					},
+					reduce:function(){
+						return this.results=this.a-this.b;
+					},
+					cheng:function(){
+						return this.results=this.a*this.b;
+					},
+					chu:function(){
+						return this.results=(this.a/this.b).toFixed(2);
+						
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

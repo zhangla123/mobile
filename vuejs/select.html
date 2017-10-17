@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<select v-model="zy">
+				<option v-for="(value,key) in list" :value="key">{{key}}</option>
+			</select>
+			<select>
+				<option v-for="x in list[zy]">{{x}}</option>
+			</select>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					'list':{
+						'qd':['js','jQ','css','h5','vue'],
+						'ui':['ps','ai','wui','ae','产品','交互']
+					},
+					zy:'qd'
+				}
+			})
+		</script>
+	</body>
+</html>

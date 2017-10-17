@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		
+	</head>
+	<body>
+		<div id="app">
+			用户名：<input type="text" v-model="a" placeholder="请输入用户名" v-bind:disabled="switched"/>
+					<span v-bind:style="{'color':'red','fontSize':'12px'}">
+						<sup v-show="flag==true">*</sup>{{info}}</span></br>
+			密  码  ：<input type="password" v-model="b" placeholder="请输入密码" v-bind:disabled="switched"/>
+					<span v-bind:style="{'color':'red','fontSize':'12px'}">
+						<sup v-show="pFlag==true">*</sup>{{tishi}}</span></br>
+			<button v-on:click="login" v-bind:disabled="switched">登录</button>
+			<span>你还可以输入{{n}}次</span>
+		</div>
+		<script>
+			var app=new Vue({
+				el:'#app',
+				data:{
+					a:'',
+					b:'',
+					info:'',
+					tishi:'',
+					flag:false,
+					pFlag:false,
+					switched:false,
+					n:3					
+				},
+				methods:{
+					login:function(){
+						this.n--;
+						if(this.n==0){
+							this.switched=true;
+						}
+						if(this.a!=='abc'||this.b!='123456'){
+							this.tishi='密码错误';
+							this.pFlag=true;
+							this.info='用户名错误';							
+							this.flag=true;
+							if(this.a=='abc'){
+								this.info='';
+								this.flag=false;
+								this.tishi='密码错误';
+								this.pFlag=true;
+								
+							}else if(this.b=='123456'){
+								this.info='用户名错误';							
+								this.flag=true;
+								this.tishi='';
+								this.pFlag=false;
+							}
+						
+						
+						}else if(this.a=='abc'&&this.b=='123456'){
+							this.info='';							
+							this.flag=false;
+							this.tishi='';
+							this.pFlag=false;						
+							alert('登录成功');
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+</html>
