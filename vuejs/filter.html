@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model="key" @focus="flag=true"/>
+			<ul v-show="flag">
+				<li v-for="x in mylist" @click="clic(x)">{{x}}</li>
+			</ul>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					list:['电脑','电话','电视机','手机','洗衣机','热水器'],
+					key:'',
+					flag:false
+				},
+				computed:{
+					mylist:function(){
+						if(this.key==''){
+							return [];
+						}
+						return this.list.filter(function(v){
+							return v.indexOf(this.key)!=-1
+						}.bind(this))
+					}
+				},
+				methods:{
+					clic(v){
+						this.key=v;
+						this.flag=false;
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

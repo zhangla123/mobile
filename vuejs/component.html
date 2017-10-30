@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<link rel="stylesheet" href="js/bootstrap.css" />
+	</head>
+	<body>
+		<div id="app">
+			<my-header tb='header'></my-header>
+			<tab nr='组件1内容'></tab>
+			<tab nr='组件2内容'></tab>
+			<tab nr='组件3内容'></tab>
+			<tab nr='组件4内容'></tab>
+			<my-progress jd='80' @complete='sub' name='1'></my-progress>
+			<my-progress jd='20' @complete='sub' name='2'></my-progress>
+			<my-progress jd='60' @complete='sub' name='3'></my-progress>
+			{{info}}
+		</div>
+		<script>
+			Vue.component('myHeader',{
+				props:['tb'],
+				template:'<div>{{tb}}</div>'
+			})
+			var tab={
+				props:['nr'],
+				template:'<div>{{nr}}</div>'				
+			}
+			var myProgress={
+				props:['jd','name'],
+				data(){
+					return {
+						v:this.jd
+					}
+				},
+				created(){
+					var timer=setInterval(function(){
+						this.v++;
+						if(this.v==100){
+							clearInterval(timer);
+							this.$emit('complete',this.name); 
+						}
+						console.log(this.v)
+					}.bind(this),300)
+				},
+				template:`<div class="progress">
+  <div class="progress-bar" :style="{'width': v+'%'}">
+    <span class="sr-only">{{v}}% Complete</span>
+  </div>
+</div>`
+			}
+			new Vue({
+				components:{
+					tab,myProgress
+				},
+				el:'#app',
+				data:{
+					info:''
+				},
+				methods:{
+					sub(n){
+						this.info='第'+n+'个任务已完成';
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

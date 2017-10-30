@@ -8,9 +8,9 @@
 	</head>
 	<body>
 		<div id="app">
-			用户名：<input type="text" v-model="a" placeholder="请输入用户名" v-bind:disabled="switched"/>
+			用户名：<input type="text" v-model="a" placeholder="请输入用户名" v-bind:disabled="switched" />
 					<span v-bind:style="{'color':'red','fontSize':'12px'}">
-						<sup v-show="flag==true">*</sup>{{info}}</span></br>
+						<sup v-show="flag==true">*</sup>{{info}}</span><span>{{trans}}</span></br>
 			密  码  ：<input type="password" v-model="b" placeholder="请输入密码" v-bind:disabled="switched"/>
 					<span v-bind:style="{'color':'red','fontSize':'12px'}">
 						<sup v-show="pFlag==true">*</sup>{{tishi}}</span></br>
@@ -29,6 +29,32 @@
 					pFlag:false,
 					switched:false,
 					n:3					
+				},
+				watch:{
+					a(v,o){
+						if(v=='abc'){
+							this.info='用户名正确';
+						}else{
+							this.info='用户名错误';
+							flag=true;
+						}
+					},
+					b(v,o){
+						if(v=='123456'){
+							this.tishi='密码正确';
+							
+						}else{
+							this.tishi='密码错误';
+							pFlag=true;
+						}
+					}
+				},
+				computed:{
+					trans(){
+						if(this.a.length>0){
+							return 'hc'+this.a.toUpperCase();
+						}
+					}
 				},
 				methods:{
 					login:function(){

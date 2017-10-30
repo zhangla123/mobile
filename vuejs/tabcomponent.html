@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style>
+			.col{
+				background: red;
+			}
+			.app ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+			}
+			.app ul li{
+				float: left;
+				width: 80px;
+				text-align: center;
+				cursor: pointer;
+				
+			}
+			.tab div{
+				clear: both;
+				width: 400px;
+				height: 200px;
+				border: solid 1px #999;
+			}
+		</style>
+	</head> 
+	<body>
+		<div id="app" class="app">
+			<tab :list='list' :contents='contents'></tab>
+			<tab :list='list2' :contents='contents2'></tab>
+		</div>
+		<script>
+			var tab={
+				props:['list','contents'],
+				data(){
+					return {
+						index:0
+					}
+				},
+				template:`<div class='tab'>
+				<ul>
+				<li v-for="(v,k) in list" v-bind:class="{'col':k==index}" v-on:click="change(k)">{{v}}</li>
+				</ul>
+				<div v-for="(v,k) in contents" v-show="k==index">{{v}}</div>
+				</div>`,
+				methods:{
+					change:function(k){
+						this.index=k;						
+					}
+				}
+			}
+			var app=new Vue({
+				components:{
+					tab
+				},
+				el:'#app',
+				data:{
+					list:['aa','bb','cc','dd','ee'],					
+					contents:['111','222','333','444','555'],
+					contents2:['前端','UI'],
+					list2:['JS,JQ...','PS,ai....']
+				}
+				
+			})
+		</script>
+	</body>
+</html>

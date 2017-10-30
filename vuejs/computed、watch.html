@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			用户名：<input type="text" v-model="user.username"/>
+			密码：<input type="password" v-model="user.password" />
+			<span>{{info}}注册日期{{regDate}}</span>
+		</div>
+		<script>
+			new Vue({
+				el:'#app',
+				data:{
+					user:{'username':'','password':''},
+					info:'',
+					rq:new Date()
+				},
+				watch:{
+					user:{
+						handler:function(user){
+							if(user.username=='abc'&&user.password=='123'){
+								this.info='登录成功';
+							}else{
+								this.info='未登录成功';
+							}
+						},
+						deep:true
+					}
+				},
+				computed:{
+					regDate(){
+						return this.rq.getFullYear()+'年'+(this.rq.getMonth()+1)+'月'+this.rq.getDate()+'日';
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

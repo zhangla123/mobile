@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<link rel="stylesheet" href="js/bootstrap.css" />
+	</head>
+	<body>
+		<div id="app">
+			<my-component></my-component>
+		</div>
+		<script>
+			var myComponent={
+				props:['words','n'],
+				data(){
+					return {
+						flag:0
+					}
+				},
+				methods:{					
+					change:function(n){			
+						this.flag=n;				
+					}
+				},
+				template:`<ul class="nav nav-pills">				
+			<li :class="{'active':flag==n}" v-on:click='change(n)'><a href="#">{{words}}</a></li>
+			<li :class="{'active':flag==n}" v-on:click='change(n)'><a href="#">{{words}}</a></li>
+			<li :class="{'active':flag==n}" v-on:click='change(n)'><a href="#">{{words}}</a></li></ul>`
+			}
+			new Vue({
+				components:{
+					myComponent
+				},
+				el:'#app',
+				
+			})
+		</script>
+	</body>
+</html>

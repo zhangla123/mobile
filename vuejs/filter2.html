@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<ul>
+				<li v-for="x in list">{{x|mycamel}}</li>
+			</ul>
+		</div>
+		<script>
+			Vue.filter('mycamel',function(value){
+				return value.replace(/-(\w)/g,function(a,b){
+					return b.toUpperCase()
+				})
+			})
+			new Vue({
+				el:'#app',
+				data:{
+					list:['one-lesson','java-Script','html-editor','mobile-phone']
+				},
+				filters:{
+					camel:function(value){
+						return value.replace(/-(\w)/g,function(a,b){
+							return b.toUpperCase();
+						})
+					}
+				}
+			})
+		</script>
+		
+	</body>
+</html>

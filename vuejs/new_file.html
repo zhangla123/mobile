@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/vue.js"></script>
+		<style>
+			.col{
+				background: red;
+			}
+			.hd ul{
+				list-style: none;
+				margin: 0;
+				padding: 0;
+				height: 30px;
+			}
+			.hd ul li{
+				float: left;
+				width: 80px;
+				text-align: center;
+				cursor: pointer;
+				
+			}
+			.bd{
+				width: 402px;
+				height: 202px;
+				overflow: hidden;
+			}			
+			.bd>div{
+				
+				width: 400px;
+				height: 200px;
+				border: solid 1px #999;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<my-tab :list="list"></my-tab>
+		</div>	
+		<script>
+			Vue.component('my-tab', {
+			    props : ['list'],
+			    template : `<div class="tab">
+			    <div class="hd">
+			    <ul class="clearfix">
+			    <li v-for="(item, index) in list" :class="{'col':selected==index, item:true}" @mouseenter="change(index)">{{item.title}}</li>
+			    </ul>
+			    </div>
+			    <div class='bd'>
+			    <div v-for="(item, index) in list" v-show='selected==index'>{{item.content}}</div>
+			    </div>
+			    </div>
+			    `,
+				data(){
+			    	return{
+			      	   selected:0
+			    	}
+				},
+				methods:{
+			    	change(index){
+			       		this.selected = index;
+			    	}
+				}
+			});
+			new Vue({
+				el:'#app',
+				data:{
+					list:[
+						{'title':'111','content':'aaa'},
+						{'title':'222','content':'bbb'},
+						{'title':'333','content':'ccc'},
+						{'title':'444','content':'ddd'}
+					]
+				}
+			})
+		</script>
+	</body>
+</html>
